@@ -13,7 +13,7 @@ export default function SignupPage() {
           ToonifyMe
         </Link>
         <div className="relative">
-          <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-black to-gray-800 opacity-75 blur"></div>
+          <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-gray-200 to-gray-300 opacity-75 blur"></div>
           <div className="relative rounded-2xl bg-white p-6 shadow-xl">
             <LoginForm isSignUp={true} />
           </div>
