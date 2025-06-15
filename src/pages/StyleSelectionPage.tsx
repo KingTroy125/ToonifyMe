@@ -17,25 +17,25 @@ const styleOptions = [
     id: "simpsons",
     name: "Simpsons",
     description: "Yellow-skinned cartoon style inspired by The Simpsons",
-    emoji: "👨‍👩‍👧‍👦"
+    image: "/avatar-cartoon.png"
   },
   {
     id: "familyguy",
     name: "Family Guy",
     description: "Rounded shapes and bold lines in Family Guy style",
-    emoji: "👨‍👨‍👦"
+    image: "/avatar-style2.png"
   },
   {
     id: "southpark",
     name: "South Park",
     description: "Simple and colorful South Park inspired characters",
-    emoji: "👦"
+    image: "/avatar-style3.png"
   },
   {
     id: "disney",
     name: "Disney",
     description: "Classic Disney animation inspired character style",
-    emoji: "🧚"
+    image: "/avatar-style4.png"
   }
 ];
 
@@ -136,7 +136,7 @@ const StyleSelectionPage = () => {
       <main className="py-8 px-4 sm:px-6 max-w-6xl mx-auto">
         <div className="mt-20 sm:mt-16">
           <div className="relative">
-            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-black to-gray-800 opacity-75 blur"></div>
+            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-gray-200 to-gray-300 opacity-75 blur"></div>
             <div className="relative rounded-2xl bg-white p-6 sm:p-8 shadow-xl">
               <h1 className="text-3xl sm:text-4xl font-extrabold mb-3 sm:mb-4 text-center text-gray-900" style={{letterSpacing: '-0.5px'}}>
                 Create Your Avatar
@@ -155,8 +155,8 @@ const StyleSelectionPage = () => {
                       onClick={() => handleStyleSelect(style.id)}
                       className={`cursor-pointer border-2 rounded-xl overflow-hidden p-3 min-w-[5rem] flex flex-col items-center transition-all hover:shadow-md ${selectedStyle === style.id ? 'border-black bg-gray-50' : 'border-gray-200'}`}
                     >
-                      <div className="w-14 h-14 bg-gray-100 rounded-lg mb-2 flex items-center justify-center text-2xl">
-                        {style.emoji}
+                      <div className="w-14 h-14 bg-gray-100 rounded-lg mb-2 flex items-center justify-center overflow-hidden">
+                        <img src={style.image} alt={style.name} className="w-full h-full object-cover" />
                       </div>
                       <div className="text-xs font-medium text-center">{style.name}</div>
                     </div>
@@ -280,8 +280,8 @@ const StyleSelectionPage = () => {
                         onClick={() => handleStyleSelect(style.id)}
                         className={`cursor-pointer border-2 rounded-xl overflow-hidden p-3 hover:shadow-md transition-all ${selectedStyle === style.id ? 'border-black bg-gray-50' : 'border-gray-200'}`}
                       >
-                        <div className="w-20 h-20 bg-gray-100 rounded-lg mb-2 flex items-center justify-center text-2xl">
-                          {style.emoji}
+                        <div className="w-20 h-20 bg-gray-100 rounded-lg mb-2 flex items-center justify-center overflow-hidden">
+                          <img src={style.image} alt={style.name} className="w-full h-full object-cover" />
                         </div>
                         <div className="text-sm font-medium">{style.name}</div>
                       </div>

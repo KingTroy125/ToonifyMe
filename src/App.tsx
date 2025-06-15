@@ -8,6 +8,7 @@ import StyleSelectionPage from "./pages/StyleSelectionPage";
 import NotFound from "./pages/NotFound";
 import LoginPage from "./pages/login/login";
 import SignupPage from "./pages/login/Signup";
+import AccountSettings from "./pages/AccountSettings";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,14 @@ const App = () => (
           />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
+          <Route 
+            path="/account" 
+            element={
+              <ProtectedRoute>
+                <AccountSettings />
+              </ProtectedRoute>
+            } 
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
